@@ -2456,3 +2456,14 @@ h3,
 .footer-area .footer-bottom .footer-social a span {
   font-size: 14px;
 }
+/* Logo Sizing */
+.navbar img {
+  height: 50px;
+  width: 227px;
+}
+/* Media Query for getting started button */
+@media (max-width: 600px) {
+  .hero-banner__content {
+    text-align: center;
+  }
+}
