@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 body {
   color: #797979;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.667;
@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rajdhani", sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   color: #3a414e;
   line-height: 1.25;
 }
@@ -181,7 +181,7 @@ h3,
   margin-right: 30px;
 }
 .header_area .navbar .nav .nav-item .nav-link {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   font-size: 14px;
   text-transform: capitalize;
@@ -225,7 +225,7 @@ h3,
   }
 }
 .header_area .navbar .nav .nav-item.submenu ul:before {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-style: solid;
@@ -399,18 +399,18 @@ h3,
   .header_area .navbar {
     background: #412fb3;
   }
-  .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
+  .navbar-toggler[aria-expanded='false'] span:nth-child(2) {
     opacity: 1;
   }
-  .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+  .navbar-toggler[aria-expanded='true'] span:nth-child(2) {
     opacity: 0;
   }
-  .navbar-toggler[aria-expanded="true"] span:first-child {
+  .navbar-toggler[aria-expanded='true'] span:first-child {
     transform: rotate(-45deg);
     position: relative;
     top: 7.5px;
   }
-  .navbar-toggler[aria-expanded="true"] span:last-child {
+  .navbar-toggler[aria-expanded='true'] span:last-child {
     transform: rotate(45deg);
     bottom: 6px;
     position: relative;
@@ -720,7 +720,7 @@ h3,
   margin-bottom: 45px;
 }
 .hero-banner::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -950,7 +950,7 @@ h3,
 }
 .card-pricing__price {
   font-size: 40px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   margin: 0;
 }
@@ -1178,7 +1178,7 @@ h3,
   border-color: #fff;
 }
 .about_us .about_img:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 30px;
   bottom: -5px;
@@ -1323,7 +1323,7 @@ h3,
   transform: translate(-50%, -50%);
 }
 .blog-banner-area::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -1406,7 +1406,7 @@ h3,
   bottom: 0px;
 }
 .causes_item .causes_img .c_parcent span:before {
-  content: "75%";
+  content: '75%';
   position: absolute;
   right: -10px;
   bottom: 0px;
@@ -2162,7 +2162,7 @@ h3,
 }
 .contact-banner-area {
   height: 280px;
-  background: url("../../assets/images/contact-bg.png") center center no-repeat;
+  background: url('../../assets/images/contact-bg.png') center center no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -2180,7 +2180,7 @@ h3,
   transform: translate(-50%, -50%);
 }
 .contact-banner-area::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -2387,7 +2387,7 @@ h3,
   color: #797979;
 }
 .footer-area .single-footer-widget .click-btn {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #3a414e;
   border-radius: 0;
   border-top-left-radius: 0px;
@@ -2466,4 +2466,143 @@ h3,
   .hero-banner__content {
     text-align: center;
   }
+}
+/* Css for the form */
+/* Fix the button on the left side of the page */
+
+/* Position the Popup form */
+.login-popup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+/* Hide the Popup form */
+.form-popup {
+  background: white;
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 15%;
+  transform: translate(-45%, 5%);
+  border: 2px solid #666;
+  z-index: 9;
+}
+/* Styles for the form container */
+
+/* Hover effects for buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+/* FORM ELEMENTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form h1 {
+  margin-bottom: 1.5rem;
+}
+
+.my-form li,
+.my-form .grid > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.my-form select,
+.my-form input,
+.my-form textarea {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: #fff;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(0, 188, 212, 0.4) !important;
+}
+
+.my-form textarea {
+  height: 170px;
+}
+
+.my-form ::placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus,
+.my-form button:enabled:hover,
+.my-form button:focus,
+.my-form input[type='checkbox']:focus + label {
+  background: var(--bgFormElsFocus);
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus {
+  transform: scale(1.02);
+}
+
+.my-form *:required,
+.my-form select {
+  border: none;
+  color: black;
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 15px 15px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(0, 188, 212, 0.4) !important;
+}
+
+.my-form *:required {
+  color: black;
+  border: none;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+}
+
+.my-form *:disabled {
+  cursor: default;
+  filter: blur(2px);
+}
+
+/* FORM BTNS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form .required-msg {
+  display: none;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg)
+    no-repeat center left / 15px 15px;
+  padding-left: 20px;
+}
+
+.my-form .btn-grid {
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.2s;
+}
+
+.my-form button {
+  font-weight: bold;
+}
+
+.my-form button > * {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.my-form button .back {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-110%, -50%);
+}
+
+.my-form button:enabled:hover .back,
+.my-form button:focus .back {
+  transform: translate(-50%, -50%);
+}
+
+.my-form button:enabled:hover .front,
+.my-form button:focus .front {
+  transform: translateX(110%);
 }

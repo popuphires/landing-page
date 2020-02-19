@@ -231,7 +231,89 @@
                     to ensure that the final output comes with three major characteristics : Quality, Quantity and
                     Novelty.Download our case study in the “XXXXXX” Industry vertical to know how Data Scole can truly
                     transform your data warehouse. </p>
-                  <a class="button button-light" href="#">Download Our Case Study</a>
+                  <div class="open-btn">
+                    <button class="button button-light open-button" onclick="openForm()">Download Our Case Study</a>
+                  </div>
+                  <div class="login-popup">
+                    <div class="form-popup" id="popupForm">
+                      <form class="my-form">
+                        <div class="container">
+                          <h5 class="sample_item">
+                            
+                          </h5>
+                          <ul>
+                            <li>
+                              <input
+                                type="text"
+                                placeholder="First Name"
+                                id="name"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                            <li>
+                              <input
+                                type="text"
+                                placeholder="Last Name"
+                                id="title"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                            <li>
+                              <input
+                                type="email"
+                                placeholder="Email"
+                                id="email"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                            <li>
+                              <input
+                                type="number"
+                                placeholder="Phone Number"
+                                id="phone"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                            <li>
+                              <input
+                                type="text"
+                                placeholder="Company Name"
+                                id="company_name"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                            
+                            <li>
+                              <input
+                                type="text"
+                                placeholder="Industry"
+                                id="industry"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                            <li>
+                              <input
+                                type="text"
+                                placeholder="Description"
+                                id="description"
+                                class="margin-class"
+                                required
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </form>
+                      <div class="grid grid-2" style="text-align: center;">
+                        <button class="submit-class" onclick="submitReport()">SUBMIT</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-7">
@@ -263,10 +345,11 @@
                 <h2>The Smartest Data Lake in the market.</h2>
                 <ol>
                   <p>
-                    If you haven't already tried out our demo, visit this link to experience what DataSocle can
-                    potentially do for your organization. For more industry specific use cases, let’s build an advanced
-                    demo or proof of concept. You can also request us to build custom modules or workflows within Data
-                    Scole to help you build a unique, intelligent data repository.
+                    Molestie lorem est faucibus Faucibus erat phasellus placerat proinint aptent pulvinar fusce
+                    nostra
+                    porta sem platea nec, donec fusce erat Molestie lorem est faucibus faucibus erat phasellus
+                    placerat
+                    proin aptent pulvinar fusce nostra port
                   </p>
                   <p>
                     If you are looking for a custom implementation for your organization, please reach out to us using
@@ -615,6 +698,107 @@
   <script src="js/jquery.ajaxchimp.min.js"></script>
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+        
+}
+function submitReport() {
+        var name = $('#name').val();
+        var title = $('#title').val();
+        var company_name = $('#company_name').val();
+        var email = $('#email')
+          .val()
+          .trim();
+        var phone = $('#phone');
+        var industry = $('#industry');
+        var description = $('#description')
+        console.log(name, title, company_name);
+        const body = `<div>
+                      <p>Name: ${name}</p>
+                      <p>Title: ${title}</p>
+                      <p>Company Name: ${company_name}</p>
+                      <p>Phone: ${phone}</p>
+                      <p>Industry: ${industry}</p>
+                      <p>Description: ${description}</p>
+                    </div>`;
+        var data = {
+          Host: 'smtp.sendgrid.com',
+          Username: 'mediadata245',
+          Password: 'mediadata245123',
+          To: email,
+          From: 'media@data245.com',
+          Subject: 'This is the subject',
+          Body: body
+        };
+        if (email != '') {
+          Email.send(data).then(message => {
+            if (message != 'Failure sending mail.') {
+              const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                onOpen: toast => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer);
+                  toast.addEventListener('mouseleave', Swal.resumeTimer);
+                }
+              });
+              Toast.fire({
+                icon: 'success',
+                title: 'Mail sent Successfully'
+              });
+            } else {
+              const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                onOpen: toast => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer);
+                  toast.addEventListener('mouseleave', Swal.resumeTimer);
+                }
+              });
+
+              Toast.fire({
+                icon: 'error',
+                title: 'Internal server error'
+              });
+            }
+          });
+        } else {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: toast => {
+              toast.addEventListener('mouseenter', Swal.stopTimer);
+              toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+          });
+
+          Toast.fire({
+            icon: 'error',
+            title: 'Please enter valid Email !'
+          });
+        }
+      
+}
+
+function closeForm() {
+document.getElementById("popupForm").style.display = "none";
+}
+window.onclick = function(event) {
+        var modal = document.getElementById('loginPopup');
+        if (event.target == modal) {
+          closeForm();
+        }
+      }
+  </script>
 </body>
 
 </html>
