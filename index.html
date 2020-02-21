@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="vendors/linericon/style.css">
   <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
   <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -232,86 +233,69 @@
                     Novelty.Download our case study in the “XXXXXX” Industry vertical to know how Data Scole can truly
                     transform your data warehouse. </p>
                   <div class="open-btn">
-                    <button class="button button-light open-button" onclick="openForm()">Download Our Case Study</a>
+                    <button class="button button-light open-button" data-toggle="modal" data-target="#myModal">Download
+                      Our Case Study</a>
                   </div>
-                  <div class="login-popup">
-                    <div class="form-popup" id="popupForm">
-                      <form class="my-form">
-                        <div class="container">
-                          <h5 class="sample_item">
-                            
-                          </h5>
-                          <ul>
-                            <li>
-                              <input
-                                type="text"
-                                placeholder="First Name"
-                                id="name"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                placeholder="Last Name"
-                                id="title"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="email"
-                                placeholder="Email"
-                                id="email"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="number"
-                                placeholder="Phone Number"
-                                id="phone"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                placeholder="Company Name"
-                                id="company_name"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                            
-                            <li>
-                              <input
-                                type="text"
-                                placeholder="Industry"
-                                id="industry"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                placeholder="Description"
-                                id="description"
-                                class="margin-class"
-                                required
-                              />
-                            </li>
-                          </ul>
+                  <!---->
+                  <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
                         </div>
-                      </form>
-                      <div class="grid grid-2" style="text-align: center;">
-                        <button class="submit-class" onclick="submitReport()">SUBMIT</button>
+                        <div class="modal-body">
+                          <div class="login-popup">
+                            <div class="form-popup" id="popupForm">
+                              <form class="my-form">
+                                <div class="container">
+                                  <h5 class="sample_item">
+
+                                  </h5>
+                                  <ul>
+                                    <li>
+                                      <input type="text" placeholder="First Name" id="name" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="text" placeholder="Last Name" id="title" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="email" placeholder="Email" id="email" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="number" placeholder="Phone Number" id="phone" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="text" placeholder="Company Name" id="company_name"
+                                        class="margin-class" required />
+                                    </li>
+
+                                    <li>
+                                      <input type="text" placeholder="Industry" id="industry" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="text" placeholder="Description" id="description" class="margin-class"
+                                        required />
+                                    </li>
+                                  </ul>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal"
+                            onclick="submitReport()">Submit</button>
+                        </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
@@ -699,22 +683,21 @@
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
   <script>
-    function openForm() {
-        document.getElementById("popupForm").style.display = "block";
-        
-}
-function submitReport() {
-        var name = $('#name').val();
-        var title = $('#title').val();
-        var company_name = $('#company_name').val();
-        var email = $('#email')
-          .val()
-          .trim();
-        var phone = $('#phone');
-        var industry = $('#industry');
-        var description = $('#description')
-        console.log(name, title, company_name);
-        const body = `<div>
+    //     function openForm() {
+    //         document.getElementById("popupForm").style.display = "block";
+
+    // }
+    function submitReport() {
+      var name = $('#name').val();
+      var title = $('#title').val();
+      var company_name = $('#company_name').val();
+      var email = $('#email')
+        .val()
+        .trim();
+      var phone = $('#phone');
+      var industry = $('#industry');
+      var description = $('#description')
+      const body = `<div>
                       <p>Name: ${name}</p>
                       <p>Title: ${title}</p>
                       <p>Company Name: ${company_name}</p>
@@ -722,82 +705,85 @@ function submitReport() {
                       <p>Industry: ${industry}</p>
                       <p>Description: ${description}</p>
                     </div>`;
-        var data = {
-          Host: 'smtp.sendgrid.com',
-          Username: 'mediadata245',
-          Password: 'mediadata245123',
-          To: email,
-          From: 'media@data245.com',
-          Subject: 'This is the subject',
-          Body: body
-        };
-        if (email != '') {
-          Email.send(data).then(message => {
-            if (message != 'Failure sending mail.') {
-              const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                onOpen: toast => {
-                  toast.addEventListener('mouseenter', Swal.stopTimer);
-                  toast.addEventListener('mouseleave', Swal.resumeTimer);
-                }
-              });
-              Toast.fire({
-                icon: 'success',
-                title: 'Mail sent Successfully'
-              });
-            } else {
-              const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                onOpen: toast => {
-                  toast.addEventListener('mouseenter', Swal.stopTimer);
-                  toast.addEventListener('mouseleave', Swal.resumeTimer);
-                }
-              });
+      var data = {
+        Host: 'smtp.sendgrid.com',
+        Username: 'mediadata245',
+        Password: 'mediadata245123',
+        To: email,
+        From: 'media@data245.com',
+        Subject: 'This is the subject',
+        Body: body
+      };
+      if (email != '') {
+        Email.send(data).then(message => {
+          if (message != 'Failure sending mail.') {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              }
+            });
+            Toast.fire({
+              icon: 'success',
+              title: 'Mail sent Successfully'
+            });
 
-              Toast.fire({
-                icon: 'error',
-                title: 'Internal server error'
-              });
-            }
-          });
-        } else {
-          const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            onOpen: toast => {
-              toast.addEventListener('mouseenter', Swal.stopTimer);
-              toast.addEventListener('mouseleave', Swal.resumeTimer);
-            }
-          });
+            window.open('/dummy.pdf');
 
-          Toast.fire({
-            icon: 'error',
-            title: 'Please enter valid Email !'
-          });
-        }
-      
-}
+          } else {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              }
+            });
 
-function closeForm() {
-document.getElementById("popupForm").style.display = "none";
-}
-window.onclick = function(event) {
-        var modal = document.getElementById('loginPopup');
-        if (event.target == modal) {
-          closeForm();
-        }
+            Toast.fire({
+              icon: 'error',
+              title: 'Internal server error'
+            });
+          }
+        });
+      } else {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          onOpen: toast => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          }
+        });
+
+        Toast.fire({
+          icon: 'error',
+          title: 'Please enter valid Email !'
+        });
       }
+
+    }
+
+    // function closeForm() {
+    // document.getElementById("popupForm").style.display = "none";
+    // }
+    window.onclick = function (event) {
+      var modal = document.getElementById('loginPopup');
+      if (event.target == modal) {
+        closeForm();
+      }
+    }
   </script>
 </body>
 
