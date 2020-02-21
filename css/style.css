@@ -284,6 +284,7 @@ h3,
   font-weight: 600;
 }
 .header_area.navbar_fixed .main_menu {
+  opacity: 50%;
   position: fixed;
   width: 100%;
   top: -70px;
