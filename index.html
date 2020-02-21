@@ -240,7 +240,7 @@
                   <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
-                      <!-- Modal content-->
+                      <!-- Modal content for casestudy-->
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -298,6 +298,71 @@
 
                     </div>
                   </div>
+
+                  <!--
+                    modal for pricing
+                  -->
+
+                  <div id="pricing_modal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content for casestudy-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                          <div class="login-popup">
+                            <div class="form-popup" id="popupForm">
+                              <form class="my-form">
+                                <div class="container">
+                                  <h5 class="sample_item">
+
+                                  </h5>
+                                  <ul>
+                                    <li>
+                                      <input type="text" placeholder="Name" id="qoute_name" class="margin-class"
+                                        required />
+                                    </li>
+
+                                    <li>
+                                      <input type="email" placeholder="Email" id="qoute_email" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="number" placeholder="Phone Number" id="qoute_phone"
+                                        class="margin-class" required />
+                                    </li>
+                                    <li>
+                                      <input type="text" placeholder="Company Name" id="qoute_company_name"
+                                        class="margin-class" required />
+                                    </li>
+
+                                    <li>
+                                      <input type="text" placeholder="Industry" id="qoute_industry" class="margin-class"
+                                        required />
+                                    </li>
+                                    <li>
+                                      <input type="text" placeholder="Description" id="qoute_description"
+                                        class="margin-class" required />
+                                    </li>
+                                  </ul>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal"
+                            onclick="submitQuote()">Submit</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
                 </div>
               </div>
               <div class="col-md-7">
@@ -342,7 +407,8 @@
                   </p>
                 </ol>
 
-                <a class="button button-light" href="#">Request for Quote</a>
+                <a class="button button-light" href="#" data-toggle="modal" data-target="#pricing_modal">Request for
+                  Quote</a>
               </div>
             </div>
           </div>
@@ -661,8 +727,8 @@
         <p class="footer-text m-0 col-lg-8 col-md-12">
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           Copyright &copy;
-          <!-- <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
-            class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         </p>
         <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
@@ -734,7 +800,96 @@
               title: 'Mail sent Successfully'
             });
 
-            window.open('/dummy.pdf');
+            window.open('dummy.pdf');
+
+          } else {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              }
+            });
+
+            Toast.fire({
+              icon: 'error',
+              title: 'Internal server error'
+            });
+          }
+        });
+      } else {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          onOpen: toast => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          }
+        });
+
+        Toast.fire({
+          icon: 'error',
+          title: 'Please enter valid Email !'
+        });
+      }
+
+    }
+
+
+    function submitQuote() {
+      var name = $('#quote_name').val();
+      var company_name = $('#qoute_company_name').val();
+      var email = $('#qoute_email')
+        .val()
+        .trim();
+      alert(email)
+      var phone = $('#qoute_phone');
+      var industry = $('#qoute_industry');
+      var description = $('#qoute_description')
+      const body = `<div>
+                      <p>Name: ${name}</p>
+                      <p>Title: ${title}</p>
+                      <p>Company Name: ${company_name}</p>
+                      <p>Phone: ${phone}</p>
+                      <p>Industry: ${industry}</p>
+                      <p>Description: ${description}</p>
+                    </div>`;
+      var data = {
+        Host: 'smtp.sendgrid.com',
+        Username: 'arunabho',
+        Password: 'arunabho1234',
+        To: email,
+        From: 'upworknabho@gmail.com',
+        Subject: 'This is the subject',
+        Body: body
+      };
+      if (email != '') {
+        Email.send(data).then(message => {
+          if (message != 'Failure sending mail.') {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              }
+            });
+            Toast.fire({
+              icon: 'success',
+              title: 'Mail sent Successfully'
+            });
+
+            window.open('dummy.pdf');
 
           } else {
             const Toast = Swal.mixin({
