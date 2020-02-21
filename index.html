@@ -280,10 +280,6 @@
                                       <input type="text" placeholder="Industry" id="industry" class="margin-class"
                                         required />
                                     </li>
-                                    <li>
-                                      <input type="text" placeholder="Description" id="description" class="margin-class"
-                                        required />
-                                    </li>
                                   </ul>
                                 </div>
                               </form>
@@ -344,8 +340,8 @@
                                         required />
                                     </li>
                                     <li>
-                                      <input type="text" placeholder="Description" id="qoute_description"
-                                        class="margin-class" required />
+                                      <textarea type="text" placeholder="Description" id="qoute_description"
+                                        class="margin-class" required></textarea>
                                     </li>
                                   </ul>
                                 </div>
@@ -763,14 +759,12 @@
       alert(email)
       var phone = $('#phone');
       var industry = $('#industry');
-      var description = $('#description')
       const body = `<div>
                       <p>Name: ${name}</p>
                       <p>Title: ${title}</p>
                       <p>Company Name: ${company_name}</p>
                       <p>Phone: ${phone}</p>
                       <p>Industry: ${industry}</p>
-                      <p>Description: ${description}</p>
                     </div>`;
       var data = {
         Host: 'smtp.sendgrid.com',
@@ -855,7 +849,6 @@
       var description = $('#qoute_description')
       const body = `<div>
                       <p>Name: ${name}</p>
-                      <p>Title: ${title}</p>
                       <p>Company Name: ${company_name}</p>
                       <p>Phone: ${phone}</p>
                       <p>Industry: ${industry}</p>
