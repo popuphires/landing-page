@@ -2461,8 +2461,8 @@ h3,
 }
 /* Logo Sizing */
 .navbar img {
-  height: 50px;
-  width: 227px;
+  height: 86px;
+  width: 106px;
 }
 /* Media Query for getting started button */
 @media (max-width: 600px) {
