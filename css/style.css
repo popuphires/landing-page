@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 body {
   color: #797979;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.667;
@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rajdhani", sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   color: #3a414e;
   line-height: 1.25;
 }
@@ -181,7 +181,7 @@ h3,
   margin-right: 30px;
 }
 .header_area .navbar .nav .nav-item .nav-link {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   font-size: 14px;
   text-transform: capitalize;
@@ -225,7 +225,7 @@ h3,
   }
 }
 .header_area .navbar .nav .nav-item.submenu ul:before {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-style: solid;
@@ -284,7 +284,6 @@ h3,
   font-weight: 600;
 }
 .header_area.navbar_fixed .main_menu {
-  opacity: 50%;
   position: fixed;
   width: 100%;
   top: -70px;
@@ -400,18 +399,18 @@ h3,
   .header_area .navbar {
     background: #412fb3;
   }
-  .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
+  .navbar-toggler[aria-expanded='false'] span:nth-child(2) {
     opacity: 1;
   }
-  .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+  .navbar-toggler[aria-expanded='true'] span:nth-child(2) {
     opacity: 0;
   }
-  .navbar-toggler[aria-expanded="true"] span:first-child {
+  .navbar-toggler[aria-expanded='true'] span:first-child {
     transform: rotate(-45deg);
     position: relative;
     top: 7.5px;
   }
-  .navbar-toggler[aria-expanded="true"] span:last-child {
+  .navbar-toggler[aria-expanded='true'] span:last-child {
     transform: rotate(45deg);
     bottom: 6px;
     position: relative;
@@ -452,8 +451,7 @@ h3,
     margin-left: 0px;
   }
   .header_area .navbar-collapse {
-    max-height: 340px;
-    overflow-y: scroll;
+    height: auto !important;
   }
   .header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
     padding: 0px 15px;
@@ -648,7 +646,7 @@ h3,
 }
 @media (max-width: 480px) {
   .header_area .navbar-collapse {
-    max-height: 250px;
+    height: auto !important;
   }
   .home_banner_area .banner_inner .banner_content {
     padding: 30px 15px;
@@ -721,7 +719,7 @@ h3,
   margin-bottom: 45px;
 }
 .hero-banner::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -809,7 +807,6 @@ h3,
   margin-bottom: 0;
 }
 .card-feature {
-  text-align: center !important;
   padding: 30px 35px;
   border: 0;
   border-radius: 0;
@@ -820,7 +817,6 @@ h3,
   transition: all 0.3s ease 0s;
 }
 .card-feature__icon {
-  text-align: center;
   margin-bottom: 12px;
 }
 .card-feature__icon i,
@@ -835,10 +831,10 @@ h3,
 .card-feature__subtitle {
   margin-bottom: 0;
 }
-.card-feature:hover {
+/* .card-feature:hover {
   background: #fff;
   box-shadow: 0px 10px 20px 0px rgba(33, 20, 106, 0.1);
-}
+} */
 .about__content h2 {
   margin-bottom: 20px;
 }
@@ -847,6 +843,27 @@ h3,
 }
 .offer-single {
   margin-bottom: 30px;
+}
+
+.about_us_background{
+  background-color: #faf9ff;
+  height: 100%;
+}
+.feature_background{
+  background-color: #faf9ff;
+  height: 100%;
+}
+
+.feature_background:hover {
+  background: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(33, 20, 106, 0.1);
+}
+.offer-single:hover {
+  background: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(33, 20, 106, 0.1);
+}
+.tryforfree_btn{
+  float: left;
 }
 @media (min-width: 991px) {
   .offer-single {
@@ -870,10 +887,10 @@ h3,
 .offer-single__content p {
   margin-bottom: 0;
 }
-.offer-single__content:hover {
+/* .offer-single__content:hover {
   background: #fff;
   box-shadow: 0px 10px 20px 0px rgba(33, 20, 106, 0.1);
-}
+} */
 .offer-single__icon {
   display: inline-block;
   margin-bottom: 15px;
@@ -901,7 +918,6 @@ h3,
 @media (min-width: 991px) {
   .offer-single-wrapper .offer-single:nth-child(even) {
     position: relative;
-    top: 40px;
   }
 }
 @media (min-width: 1200px) {
@@ -953,7 +969,7 @@ h3,
 }
 .card-pricing__price {
   font-size: 40px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   margin: 0;
 }
@@ -1181,7 +1197,7 @@ h3,
   border-color: #fff;
 }
 .about_us .about_img:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 30px;
   bottom: -5px;
@@ -1326,7 +1342,7 @@ h3,
   transform: translate(-50%, -50%);
 }
 .blog-banner-area::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -1409,7 +1425,7 @@ h3,
   bottom: 0px;
 }
 .causes_item .causes_img .c_parcent span:before {
-  content: "75%";
+  content: '75%';
   position: absolute;
   right: -10px;
   bottom: 0px;
@@ -2165,7 +2181,7 @@ h3,
 }
 .contact-banner-area {
   height: 280px;
-  background: url("../../assets/images/contact-bg.png") center center no-repeat;
+  background: url('../../assets/images/contact-bg.png') center center no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -2183,7 +2199,7 @@ h3,
   transform: translate(-50%, -50%);
 }
 .contact-banner-area::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -2390,7 +2406,7 @@ h3,
   color: #797979;
 }
 .footer-area .single-footer-widget .click-btn {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #3a414e;
   border-radius: 0;
   border-top-left-radius: 0px;
@@ -2461,8 +2477,8 @@ h3,
 }
 /* Logo Sizing */
 .navbar img {
-  height: 86px;
-  width: 106px;
+  height: 50px;
+  width: 227px;
 }
 /* Media Query for getting started button */
 @media (max-width: 600px) {
@@ -2482,6 +2498,13 @@ h3,
 /* Hide the Popup form */
 .form-popup {
   background: white;
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 15%;
+  transform: translate(-45%, 5%);
+  border: 2px solid #666;
+  z-index: 9;
 }
 /* Styles for the form container */
 
@@ -2529,7 +2552,7 @@ h3,
 .my-form textarea:focus,
 .my-form button:enabled:hover,
 .my-form button:focus,
-.my-form input[type="checkbox"]:focus + label {
+.my-form input[type='checkbox']:focus + label {
   background: var(--bgFormElsFocus);
 }
 

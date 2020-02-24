@@ -17,7 +17,6 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="/font/flaticon.css">
 </head>
 
 <body>
@@ -111,18 +110,20 @@
                   <div class="col-sm-12 about_us_background">
                     <div class="card offer-single__content text-center">
                       <span class="offer-single__icon">
-                        <i class="flaticon-analysis"></i>
+                        <i class="ti-pencil-alt"></i>
                       </span>
                       <h4>Extract</h4>
                       <p>Scrape or Import data from multiple sources across the web or from data files.</p>
                     </div>
                   </div>
+
                 </div>
+
                 <div class="col-lg-6 offer-single">
                   <div class="col-sm-12 about_us_background">
                     <div class="card offer-single__content text-center">
                       <span class="offer-single__icon">
-                        <i class="flaticon-harddisk"></i>
+                        <i class="ti-ruler-pencil"></i>
                       </span>
                       <h4>Sanitize</h4>
                       <p>Run standard or custom scripts. algorithms or other data transformation routines to enrich your
@@ -134,12 +135,14 @@
 
               <div class="row offer-single-wrapper">
                 <div class="col-lg-6 offer-single">
-                  <div class="card offer-single__content text-center">
-                    <span class="offer-single__icon">
-                      <i class="flaticon-ui"></i>
-                    </span>
-                    <h4>Customize</h4>
-                    <p>Create custom data models in any format like JSON, SQL, CSV, XML etc. to suit your needs.</p>
+                  <div class="col-sm-12 about_us_background">
+                    <div class="card offer-single__content text-center">
+                      <span class="offer-single__icon">
+                        <i class="ti-cut"></i>
+                      </span>
+                      <h4>Customize</h4>
+                      <p>Create custom data models in any format like JSON, SQL, CSV, XML etc. to suit your needs.</p>
+                    </div>
                   </div>
                 </div>
 
@@ -147,7 +150,7 @@
                   <div class="col-sm-12 about_us_background">
                     <div class="card offer-single__content text-center">
                       <span class="offer-single__icon">
-                        <i class="flaticon-weather"></i>
+                        <i class="ti-light-bulb"></i>
                       </span>
                       <h4>Reuse</h4>
                       <p>Pull your data models and formats into any 3rd party application or service using our Restful
@@ -155,6 +158,7 @@
                     </div>
                   </div>
                 </div>
+
               </div>
 
             </div>
@@ -182,11 +186,11 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-lg-4">
+              <div class="col-lg-4 ">
                 <div class="col-sm-12 feature_background">
                   <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                     <span class="card-feature__icon">
-                      <i class="flaticon-data"></i>
+                      <i class="ti-package"></i>
                     </span>
                     <h3 class="card-feature__title">Data Acquisition</h3>
                     <p class="card-feature__subtitle">You can use DataScole purely as a data gathering tool / scraper,
@@ -194,11 +198,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 ">
                 <div class="col-sm-12 feature_background">
                   <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                     <span class="card-feature__icon">
-                      <i class="flaticon-ui-1"></i>
+                      <i class="ti-mouse-alt"></i>
                     </span>
                     <h3 class="card-feature__title">Data Storage</h3>
                     <p class="card-feature__subtitle">You can choose to store your bulk data or data models with us,
@@ -206,12 +210,13 @@
                       state at all times with DataSocle.</p>
                   </div>
                 </div>
+
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 ">
                 <div class="col-sm-12 feature_background">
                   <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                     <span class="card-feature__icon">
-                      <i class="flaticon-api"></i>
+                      <i class="ti-headphone-alt"></i>
                     </span>
                     <h3 class="card-feature__title">Data Integration </h3>
                     <p class="card-feature__subtitle">At Data Scole, 100% uptime of data is our main focus and you can
@@ -245,132 +250,49 @@
                     Novelty.Download our case study in the “XXXXXX” Industry vertical to know how Data Scole can truly
                     transform your data warehouse. </p>
                   <div class="open-btn">
-                    <button class="button button-light open-button" data-toggle="modal" data-target="#myModal">Download
-                      Our Case Study</a>
+                    <button class="button button-light open-button" onclick="openForm()">Download Our Case Study</a>
                   </div>
-                  <!---->
-                  <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
+                  <div class="login-popup">
+                    <div class="form-popup" id="popupForm">
+                      <form class="my-form">
+                        <div class="container">
+                          <h5 class="sample_item">
 
-                      <!-- Modal content for casestudy-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </h5>
+                          <ul>
+                            <li>
+                              <input type="text" placeholder="First Name" id="name" class="margin-class" required />
+                            </li>
+                            <li>
+                              <input type="text" placeholder="Last Name" id="title" class="margin-class" required />
+                            </li>
+                            <li>
+                              <input type="email" placeholder="Email" id="email" class="margin-class" required />
+                            </li>
+                            <li>
+                              <input type="number" placeholder="Phone Number" id="phone" class="margin-class"
+                                required />
+                            </li>
+                            <li>
+                              <input type="text" placeholder="Company Name" id="company_name" class="margin-class"
+                                required />
+                            </li>
 
+                            <li>
+                              <input type="text" placeholder="Industry" id="industry" class="margin-class" required />
+                            </li>
+                            <li>
+                              <input type="text" placeholder="Description" id="description" class="margin-class"
+                                required />
+                            </li>
+                          </ul>
                         </div>
-                        <div class="modal-body">
-                          <div class="login-popup">
-                            <div class="form-popup" id="popupForm">
-                              <form class="my-form">
-                                <div class="container">
-                                  <h5 class="sample_item">
-
-                                  </h5>
-                                  <ul>
-                                    <li>
-                                      <input type="text" placeholder="First Name" id="name" class="margin-class"
-                                        required />
-                                    </li>
-                                    <li>
-                                      <input type="text" placeholder="Last Name" id="title" class="margin-class"
-                                        required />
-                                    </li>
-                                    <li>
-                                      <input type="email" placeholder="Email" id="email" class="margin-class"
-                                        required />
-                                    </li>
-                                    <li>
-                                      <input type="number" placeholder="Phone Number" id="phone" class="margin-class"
-                                        required />
-                                    </li>
-                                    <li>
-                                      <input type="text" placeholder="Company Name" id="company_name"
-                                        class="margin-class" required />
-                                    </li>
-
-                                    <li>
-                                      <input type="text" placeholder="Industry" id="industry" class="margin-class"
-                                        required />
-                                    </li>
-                                  </ul>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal"
-                            onclick="submitReport()">Submit</button>
-                        </div>
+                      </form>
+                      <div class="grid grid-2" style="text-align: center;">
+                        <button class="submit-class" onclick="submitReport()">SUBMIT</button>
                       </div>
-
                     </div>
                   </div>
-
-                  <!--
-                    modal for pricing
-                  -->
-
-                  <div id="pricing_modal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                      <!-- Modal content for casestudy-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                        </div>
-                        <div class="modal-body">
-                          <div class="login-popup">
-                            <div class="form-popup" id="popupForm">
-                              <form class="my-form">
-                                <div class="container">
-                                  <h5 class="sample_item">
-
-                                  </h5>
-                                  <ul>
-                                    <li>
-                                      <input type="text" placeholder="Name" id="qoute_name" class="margin-class"
-                                        required />
-                                    </li>
-
-                                    <li>
-                                      <input type="email" placeholder="Email" id="qoute_email" class="margin-class"
-                                        required />
-                                    </li>
-                                    <li>
-                                      <input type="number" placeholder="Phone Number" id="qoute_phone"
-                                        class="margin-class" required />
-                                    </li>
-                                    <li>
-                                      <input type="text" placeholder="Company Name" id="qoute_company_name"
-                                        class="margin-class" required />
-                                    </li>
-
-                                    <li>
-                                      <input type="text" placeholder="Industry" id="qoute_industry" class="margin-class"
-                                        required />
-                                    </li>
-                                    <li>
-                                      <textarea type="text" placeholder="Description" id="qoute_description"
-                                        class="margin-class" required></textarea>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal"
-                            onclick="submitQuote()">Submit</button>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-
                 </div>
               </div>
               <div class="col-md-7">
@@ -415,8 +337,7 @@
                   </p>
                 </ol>
 
-                <a class="button button-light" href="#" data-toggle="modal" data-target="#pricing_modal">Request for
-                  Quote</a>
+                <a class="button button-light" href="#">Request for Quote</a>
               </div>
             </div>
           </div>
@@ -424,76 +345,95 @@
       </section>
     </div>
     <!-- ================ contact section start ================= -->
-    <div id="contact">
-      <section class="section-margin">
-        <div class="container">
-          <div class="d-none d-sm-block mb-5 pb-4">
-            <div id="map"></div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15553.260234276433!2d77.6424887!3d12.9516804!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4a341d9442457e12!2sSift%20Consultancy%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1582295308113!5m2!1sen!2sin"
-              width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-          </div>
+    <section class="section-margin">
+      <div class="container">
+        <div class="d-none d-sm-block mb-5 pb-4">
+          <div id="map" style="height: 420px;"></div>
+          <script>
+            function initMap() {
+              var uluru = { lat: -25.363, lng: 131.044 };
+              var grayStyles = [
+                {
+                  featureType: "all",
+                  stylers: [
+                    { saturation: -90 },
+                    { lightness: 50 }
+                  ]
+                },
+                { elementType: 'labels.text.fill', stylers: [{ color: '#A3A3A3' }] }
+              ];
+              var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -31.197, lng: 150.744 },
+                zoom: 9,
+                styles: grayStyles,
+                scrollwheel: false
+              });
+            }
+
+          </script>
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+
+        </div>
 
 
-          <div class="row">
-            <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
-              <div class="media contact-info">
-                <span class="contact-info__icon"><i class="ti-home"></i></span>
-                <div class="media-body">
-                  <h3>7119, Spaces, 7th Floor, Fairway Business Park</h3>
-                  <p>Domlur, Bengaluru, Karnataka, India – 560071
-                  </p>
-                </div>
+        <div class="row">
+          <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+            <div class="media contact-info">
+              <span class="contact-info__icon"><i class="ti-home"></i></span>
+              <div class="media-body">
+                <h3>7119, Spaces, 7th Floor, Fairway Business Park</h3>
+                <p>Domlur, Bengaluru, Karnataka, India – 560071
+                </p>
               </div>
-              <div class="media contact-info">
-                <span class="contact-info__icon"><i class="ti-headphone"></i></span>
-                <div class="media-body">
-                  <h3><a href="tel:+91 8880171000
+            </div>
+            <div class="media contact-info">
+              <span class="contact-info__icon"><i class="ti-headphone"></i></span>
+              <div class="media-body">
+                <h3><a href="tel:+91 8880171000
                   ">+91 8880171000
-                    </a></h3>
-                  <p>Mon to Fri 9am to 6pm</p>
-                </div>
-              </div>
-              <div class="media contact-info">
-                <span class="contact-info__icon"><i class="ti-email"></i></span>
-                <div class="media-body">
-                  <h3><a href="mailto:sales@siftconsultancy.com">sales@siftconsultancy.com</a></h3>
-                  <p>Send us your query anytime!</p>
-                </div>
+                  </a></h3>
+                <p>Mon to Fri 9am to 6pm</p>
               </div>
             </div>
-            <div class="col-md-8 col-lg-9">
-              <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post"
-                id="contactForm" novalidate="novalidate">
-                <div class="row">
-                  <div class="col-lg-5">
-                    <div class="form-group">
-                      <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control" name="email" id="email" type="email"
-                        placeholder="Enter email address">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
-                    </div>
-                  </div>
-                  <div class="col-lg-7">
-                    <div class="form-group">
-                      <textarea class="form-control different-control w-100" name="message" id="message" cols="30"
-                        rows="5" placeholder="Enter Message"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group text-center text-md-right mt-3">
-                  <button type="submit" class="button button-contactForm">Send Message</button>
-                </div>
-              </form>
+            <div class="media contact-info">
+              <span class="contact-info__icon"><i class="ti-email"></i></span>
+              <div class="media-body">
+                <h3><a href="mailto:sales@siftconsultancy.com">sales@siftconsultancy.com</a></h3>
+                <p>Send us your query anytime!</p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-8 col-lg-9">
+            <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post"
+              id="contactForm" novalidate="novalidate">
+              <div class="row">
+                <div class="col-lg-5">
+                  <div class="form-group">
+                    <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <div class="form-group">
+                    <textarea class="form-control different-control w-100" name="message" id="message" cols="30"
+                      rows="5" placeholder="Enter Message"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center text-md-right mt-3">
+                <button type="submit" class="button button-contactForm">Send Message</button>
+              </div>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
     <!-- ================ contact section end ================= -->
     <!--================ Pricing section end =================-->
 
@@ -738,10 +678,10 @@
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
   <script>
-    //     function openForm() {
-    //         document.getElementById("popupForm").style.display = "block";
+    function openForm() {
+      document.getElementById("popupForm").style.display = "block";
 
-    // }
+    }
     function submitReport() {
       var name = $('#name').val();
       var title = $('#title').val();
@@ -749,99 +689,13 @@
       var email = $('#email')
         .val()
         .trim();
-      alert(email)
       var phone = $('#phone');
       var industry = $('#industry');
+      var description = $('#description')
+      console.log(name, title, company_name);
       const body = `<div>
                       <p>Name: ${name}</p>
                       <p>Title: ${title}</p>
-                      <p>Company Name: ${company_name}</p>
-                      <p>Phone: ${phone}</p>
-                      <p>Industry: ${industry}</p>
-                    </div>`;
-      var data = {
-        Host: 'smtp.sendgrid.com',
-        Username: 'arunabho',
-        Password: 'arunabho1234',
-        To: email,
-        From: 'upworknabho@gmail.com',
-        Subject: 'This is the subject',
-        Body: body
-      };
-      if (email != '') {
-        Email.send(data).then(message => {
-          if (message != 'Failure sending mail.') {
-            const Toast = Swal.mixin({
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              onOpen: toast => {
-                toast.addEventListener('mouseenter', Swal.stopTimer);
-                toast.addEventListener('mouseleave', Swal.resumeTimer);
-              }
-            });
-            Toast.fire({
-              icon: 'success',
-              title: 'Mail sent Successfully'
-            });
-
-            window.open('dummy.pdf');
-
-          } else {
-            const Toast = Swal.mixin({
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              onOpen: toast => {
-                toast.addEventListener('mouseenter', Swal.stopTimer);
-                toast.addEventListener('mouseleave', Swal.resumeTimer);
-              }
-            });
-
-            Toast.fire({
-              icon: 'error',
-              title: 'Internal server error'
-            });
-          }
-        });
-      } else {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          onOpen: toast => {
-            toast.addEventListener('mouseenter', Swal.stopTimer);
-            toast.addEventListener('mouseleave', Swal.resumeTimer);
-          }
-        });
-
-        Toast.fire({
-          icon: 'error',
-          title: 'Please enter valid Email !'
-        });
-      }
-
-    }
-
-
-    function submitQuote() {
-      var name = $('#quote_name').val();
-      var company_name = $('#qoute_company_name').val();
-      var email = $('#qoute_email')
-        .val()
-        .trim();
-      alert(email)
-      var phone = $('#qoute_phone');
-      var industry = $('#qoute_industry');
-      var description = $('#qoute_description')
-      const body = `<div>
-                      <p>Name: ${name}</p>
                       <p>Company Name: ${company_name}</p>
                       <p>Phone: ${phone}</p>
                       <p>Industry: ${industry}</p>
@@ -849,10 +703,10 @@
                     </div>`;
       var data = {
         Host: 'smtp.sendgrid.com',
-        Username: 'arunabho',
-        Password: 'arunabho1234',
+        Username: 'mediadata245',
+        Password: 'mediadata245123',
         To: email,
-        From: 'upworknabho@gmail.com',
+        From: 'media@data245.com',
         Subject: 'This is the subject',
         Body: body
       };
@@ -874,9 +728,6 @@
               icon: 'success',
               title: 'Mail sent Successfully'
             });
-
-            window.open('dummy.pdf');
-
           } else {
             const Toast = Swal.mixin({
               toast: true,
@@ -917,9 +768,9 @@
 
     }
 
-    // function closeForm() {
-    // document.getElementById("popupForm").style.display = "none";
-    // }
+    function closeForm() {
+      document.getElementById("popupForm").style.display = "none";
+    }
     window.onclick = function (event) {
       var modal = document.getElementById('loginPopup');
       if (event.target == modal) {
