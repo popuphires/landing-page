@@ -272,7 +272,7 @@ h3,
   margin-top: 0px;
 }
 .header_area .navbar .nav .nav-item:last-child {
-  margin-right: 0px;
+  margin-right: 11px;
 }
 .header_area .navbar .search {
   font-size: 12px;
@@ -539,6 +539,10 @@ h3,
 @media (max-width: 767px) {
   .home_banner_area {
     min-height: 500px;
+  }
+
+  .modal {
+    margin-top: 3%;
   }
   .home_banner_area .banner_inner {
     min-height: 500px;
@@ -862,8 +866,8 @@ h3,
   background: #fff;
   box-shadow: 0px 10px 20px 0px rgba(33, 20, 106, 0.1);
 }
-.card{
-background: none;
+.card {
+  background: none;
 }
 
 .offer-single:hover {
@@ -2505,12 +2509,6 @@ background: none;
 /* Hide the Popup form */
 .form-popup {
   background: white;
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 15%;
-  transform: translate(-45%, 5%);
-  border: 2px solid #666;
   z-index: 9;
 }
 /* Styles for the form container */
