@@ -466,19 +466,20 @@
               </div>
             </div>
             <div class="col-md-8 col-lg-9">
-              <form action="#" class="form-contact contact_form" action="contact_process.php" method="post"
-                id="contactForm" novalidate="novalidate">
-                <div class="row">
+              <form class="form-contact contact_form" novalidate="novalidate">
+                <div class="row ">
                   <div class="col-lg-5">
                     <div class="form-group">
-                      <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                      <input class="form-control" name="name" id="contact_name" type="text"
+                        placeholder="Enter your name">
                     </div>
                     <div class="form-group">
-                      <input class="form-control" name="email" id="email" type="email"
+                      <input class="form-control" name="email" id="contact_email" type="email"
                         placeholder="Enter email address">
                     </div>
                     <div class="form-group">
-                      <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                      <input class="form-control" name="subject" id="contact_subject" type="text"
+                        placeholder="Enter Subject">
                     </div>
                   </div>
                   <div class="col-lg-7">
@@ -489,7 +490,7 @@
                   </div>
                 </div>
                 <div class="form-group text-center text-md-right mt-3">
-                  <button type="submit" class="button button-contactForm">Send Message</button>
+                  <button type="button" class="button button-contactForm" onclick="sendMsg()">Send Message</button>
                 </div>
               </form>
             </div>
@@ -728,6 +729,88 @@
     //         document.getElementById("popupForm").style.display = "block";
 
     // }
+
+    function sendMsg() {
+      var contact_name = $('#contact_name').val();
+      var contact_email = $('#contact_email')
+        .val()
+        .trim();;
+      var contact_subject = $('#contact_subject').val();
+      var contact_message = $('#message').val();
+      const body = `<div>
+                      <p>Name: ${name}</p>
+                      <p>Email: ${contact_email}</p>
+                      <p>Subject ${contact_subject}</p>
+                      <p>Message: ${contact_message}</p>
+                    </div>`;
+
+      var data = {
+        Host: 'smtp.sendgrid.com',
+        Username: 'sikukumar',
+        Password: 'Jj1234567890@',
+        To: contact_email,
+        From: 'jjeevanjyoti@gmail.com',
+        Subject: 'This is the subject',
+        Body: body
+      };
+      if (contact_email != '') {
+        Email.send(data).then(message => {
+          if (message != 'Failure sending mail.') {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              }
+            });
+            Toast.fire({
+              icon: 'success',
+              title: 'Mail sent Successfully'
+            });
+          } else {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              }
+            });
+
+            Toast.fire({
+              icon: 'error',
+              title: 'Internal server error'
+            });
+          }
+        });
+      } else {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          onOpen: toast => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          }
+        });
+
+        Toast.fire({
+          icon: 'error',
+          title: 'Please enter valid Email !'
+        });
+      }
+    }
+
+
     function submitReport() {
       var name = $('#name').val();
       var title = $('#title').val();
@@ -735,9 +818,8 @@
       var email = $('#email')
         .val()
         .trim();
-      alert(email)
-      var phone = $('#phone');
-      var industry = $('#industry');
+      var phone = $('#phone').val();
+      var industry = $('#industry').val();
       const body = `<div>
                       <p>Name: ${name}</p>
                       <p>Title: ${title}</p>
@@ -747,10 +829,10 @@
                     </div>`;
       var data = {
         Host: 'smtp.sendgrid.com',
-        Username: 'leads.datasocle',
-        Password: 'testpwd@datasocle1',
+        Username: 'sikukumar',
+        Password: 'Jj1234567890@',
         To: email,
-        From: 'daxyzzy@gmail.com',
+        From: 'jjeevanjyoti@gmail.com',
         Subject: 'This is the subject',
         Body: body
       };
@@ -822,10 +904,9 @@
       var email = $('#qoute_email')
         .val()
         .trim();
-      alert(email)
-      var phone = $('#qoute_phone');
-      var industry = $('#qoute_industry');
-      var description = $('#qoute_description')
+      var phone = $('#qoute_phone').val();
+      var industry = $('#qoute_industry').val();
+      var description = $('#qoute_description').val();
       const body = `<div>
                       <p>Name: ${name}</p>
                       <p>Company Name: ${company_name}</p>
@@ -835,10 +916,10 @@
                     </div>`;
       var data = {
         Host: 'smtp.sendgrid.com',
-        Username: 'leads.datasocle',
-        Password: 'testpwd@datasocle1',
+        Username: 'sikukumar',
+        Password: 'Jj1234567890@',
         To: email,
-        From: 'daxyzzy@gmail.com',
+        From: 'jjeevanjyoti@gmail.com',
         Subject: 'This is the subject',
         Body: body
       };
